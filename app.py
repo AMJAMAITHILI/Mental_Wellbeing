@@ -18,6 +18,9 @@ def is_out_of_scope(response):
     You can define your own logic here based on your use case.
     """
     return not response.text.strip() or "I don't know" in response.text
+@app.route("/")
+def home():
+    return "Chatbot API is running!"
 
 @app.route("/chat", methods=["POST"])
 def chat():
